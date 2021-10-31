@@ -115,9 +115,10 @@ class CountriesFragment : Fragment(R.layout.fragment_countries), CountryAdapter.
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (!newText.isNullOrEmpty()) {
-                    viewModel.setQuery(newText)
+                if(!isVisible){
+                    return true
                 }
+                viewModel.setQuery(newText)
                 viewModel.getFilteredCountries(newText)
                 return true
             }
