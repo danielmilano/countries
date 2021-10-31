@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Countries</string>
+
+    <string name="search_menu_item">Search</string>
+    <string name="filter_menu_item">Filter</string>
+
+    <!--CountriesFragment-->
+    <string name="countries_fragment_retry">Retry</string>
+    <string name="countries_fragment_no_results_found">No results found</string>
+    <string name="countries_fragment_network_error">Network error</string>
+
+    <!--CountriesFilterFragment-->
+    <string name="countries_filter_fragment_title">Filters</string>
+    <string name="countries_filter_fragment_confirm">Done</string>
+    <string name="countries_filter_fragment_filter_by_all">All</string>
+    <string name="countries_filter_fragment_filter_by_continent">Continent</string>
+    <string name="countries_filter_fragment_filter_by_language">Language</string>
+
+    <!--CountryDetailFragment-->
+    <string name="country_detail_fragment_continent_label">Continent:</string>
+    <string name="country_detail_fragment_languages_label">Languages:</string>
+    <string name="country_detail_fragment_country_code_label">Country code:</string>
+    <string name="country_detail_fragment_native_label">Native:</string>
+    <string name="country_detail_fragment_currency_label">Currency</string>
+
+</resources>

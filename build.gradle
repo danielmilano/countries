@@ -1,0 +1,65 @@
+buildscript {
+    ext.kotlin_version = "1.5.31"
+    ext.hilt_version = "2.28-alpha"
+    ext.apollo_version = "2.5.10"
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.3"
+        classpath "com.apollographql.apollo:apollo-gradle-plugin:$apollo_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    /* sdk versions */
+    compile_sdk_version = 30
+    min_sdk_version = 21
+    target_sdk_version = 30
+
+    /* app versioning */
+    version_code = 1
+    version_name = "1.0.0"
+
+    androidx_core_version = '1.3.1'
+    androidx_test_version = '1.1.3'
+    arch_testing_version = '2.1.0'
+    appcompat_version = '1.3.1'
+    constraint_layout_version = '2.1.1'
+    coroutines_adapter_version = '0.9.2'
+    coroutines_version = '1.5.2'
+    espresso_core_version = '3.4.0'
+    fragmentKtx_version = '1.3.6'
+    fragment_testing_version = '1.2.5'
+    junit_version = '4.13.2'
+    material_version = '1.4.0'
+    okhttp_version = '4.9.0'
+    nav_version = '2.4.0-alpha06'
+    retrofit_version = '2.9.0'
+    koin_version = '3.1.2'
+    viewModelKtx_version = '2.3.1'
+    viewModelSavedState_version = '2.4.0-rc01'
+    apollo_version = "2.5.10"
+    coil_version = "1.4.0"
+    core_testing_version = "2.1.0"
+    mockito_version = "3.0.0"
+    coroutines_test_version = "1.5.2"
+    gson_version = "2.8.6"
+    truth_version = "1.0"
+}

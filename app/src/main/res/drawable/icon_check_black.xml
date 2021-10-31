@@ -1,0 +1,10 @@
+<!--~ Copyright (c) 2021 by dottori.com.-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0">
+    <path
+        android:fillColor="@color/md_black_1000"
+        android:pathData="M5.427 13.033a1 1 0 0 0-1.412 0.003 0.996 0.996 0 0 0-0.002 1.412l4.246 4.246a0.995 0.995 0 0 0 1.412-0.002L20.985 7.38a0.998 0.998 0 0 0 0-1.415 0.997 0.997 0 0 0-1.414 0L8.964 16.571l-3.537-3.538z" />
+</vector>

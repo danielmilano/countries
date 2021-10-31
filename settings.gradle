@@ -1,0 +1,4 @@
+rootProject.name = "countries"
+include ':app'
+include ':data'
+include ':domain'

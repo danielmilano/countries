@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="com.danielmilano.domain.entities.Country.FilterType" />
+
+        <variable
+            name="filterType"
+            type="com.danielmilano.domain.entities.Country.FilterType" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-8dp"
+        app:cardBackgroundColor="@color/md_black_1000"
+        app:cardCornerRadius="8dp"
+        tools:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/close"
+                    style="@style/ImageView.Icon"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_close_white" />
+
+                <TextView
+                    android:id="@+id/order_by_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/countries_filter_fragment_title"
+                    android:textColor="@color/md_white_1000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/countries_filter_fragment_confirm"
+                    android:textColor="@color/md_white_1000"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filterByAll"
+                style="@style/Button"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@{filterType == filterType.ALL ? @color/md_white_1000 : @color/md_black_1000}"
+                android:drawableEnd="@{filterType == FilterType.ALL ? @drawable/icon_check_black : null}"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="@string/countries_filter_fragment_filter_by_all"
+                android:textColor="@{filterType == FilterType.ALL ? @color/md_black_1000 : @color/md_white_1000}"
+                tools:backgroundTint="@color/md_white_1000"
+                tools:drawableEnd="@drawable/icon_check_black"
+                tools:textColor="@color/md_black_1000" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filterByContinent"
+                style="@style/Button"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@{filterType == filterType.CONTINENT ? @color/md_white_1000 : @color/md_black_1000}"
+                android:drawableEnd="@{filterType == FilterType.CONTINENT ? @drawable/icon_check_black : null}"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="@string/countries_filter_fragment_filter_by_continent"
+                android:textColor="@{filterType == FilterType.CONTINENT ? @color/md_black_1000 : @color/md_white_1000}"
+                tools:background="@drawable/background_grey_rounded_8"
+                tools:textColor="@color/md_white_1000" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filterByLanguage"
+                style="@style/Button"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@{filterType == filterType.LANGUAGE ? @color/md_white_1000 : @color/md_black_1000}"
+                android:drawableEnd="@{filterType == FilterType.LANGUAGE ? @drawable/icon_check_black : null}"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="@string/countries_filter_fragment_filter_by_language"
+                android:textColor="@{filterType == FilterType.LANGUAGE ? @color/md_black_1000 : @color/md_white_1000}"
+                tools:backgroundTint="@color/md_grey_400"
+                tools:textColor="@color/md_white_1000" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
+
+

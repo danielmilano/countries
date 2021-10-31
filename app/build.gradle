@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.danielmilano.countries"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets.test.resources.srcDirs += ["src/test/resources"]
+
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':data')
+    implementation project(':domain')
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$androidx_core_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+
+    // Navigation components
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // View model
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtx_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelKtx_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$viewModelKtx_version"
+
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_test_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
+    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
+    testImplementation "io.mockk:mockk:1.10.0"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+
+    //Gson
+    testImplementation "com.google.code.gson:gson:$gson_version"
+
+    //Koin for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+    androidTestImplementation "io.insert-koin:koin-test:$koin_version"
+
+    implementation "io.coil-kt:coil-svg:$coil_version"
+    implementation "io.coil-kt:coil:$coil_version"
+
+    //Apollo
+    testImplementation "com.apollographql.apollo:apollo-runtime:$apollo_version"
+    testImplementation "com.apollographql.apollo:apollo-coroutines-support:$apollo_version"
+}
