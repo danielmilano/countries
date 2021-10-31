@@ -101,14 +101,14 @@ class CountriesFragment : Fragment(R.layout.fragment_countries), CountryAdapter.
 
         val searchItem = menu.findItem(R.id.action_search)
         val searchView = searchItem.actionView as SearchView
-
+        searchView.queryHint = getString(R.string.search_menu_item)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if(!isVisible){
+                if (!isVisible) {
                     return true
                 }
                 viewModel.setQuery(newText)

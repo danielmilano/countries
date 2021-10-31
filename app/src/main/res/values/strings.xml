@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Countries</string>
 
-    <string name="search_menu_item">Search</string>
+    <string name="search_menu_item">Search…</string>
     <string name="filter_menu_item">Filter</string>
 
     <!--CountriesFragment-->
