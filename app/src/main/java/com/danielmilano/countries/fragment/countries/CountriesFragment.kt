@@ -1,8 +1,6 @@
 package com.danielmilano.countries.fragment.countries
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
@@ -18,7 +16,6 @@ import com.danielmilano.countries.databinding.FragmentCountriesBinding
 import com.danielmilano.countries.fragment.countrydetail.CountryDetailFragment.Companion.ARG_COUNTRY
 import com.danielmilano.domain.entities.Country
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.viewmodel.ext.android.sharedStateViewModel
 
 class CountriesFragment : Fragment(R.layout.fragment_countries), CountryAdapter.OnItemClickListener {
@@ -93,13 +90,9 @@ class CountriesFragment : Fragment(R.layout.fragment_countries), CountryAdapter.
     }
 
     private fun setupUI() {
-        setupAdapter()
         setHasOptionsMenu(true)
-        mBinding.retryButton.setOnClickListener { viewModel.getCountries() }
-    }
-
-    private fun setupAdapter() {
         mBinding.recycler.adapter = mAdapter
+        mBinding.retryButton.setOnClickListener { viewModel.getCountries() }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

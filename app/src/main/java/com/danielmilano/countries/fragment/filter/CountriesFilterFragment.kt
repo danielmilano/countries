@@ -12,8 +12,6 @@ import com.danielmilano.countries.fragment.countries.CountriesViewModel
 import com.danielmilano.domain.entities.Country
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.sharedStateViewModel
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.stateViewModel
 
 class CountriesFilterFragment : BottomSheetDialogFragment() {
 

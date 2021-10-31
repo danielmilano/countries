@@ -5,13 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.danielmilano.countries.R
-import com.danielmilano.countries.databinding.FragmentCountriesBinding
 import com.danielmilano.countries.databinding.FragmentCountryDetailBinding
-import com.danielmilano.countries.fragment.countries.CountriesViewModel
 import com.danielmilano.domain.entities.Country
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class CountryDetailFragment : Fragment() {
 

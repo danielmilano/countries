@@ -4,7 +4,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import coil.load
-import com.danielmilano.domain.entities.Country
 
 const val PLACEHOLDER = "-"
 
