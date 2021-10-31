@@ -43,7 +43,7 @@ class CountriesViewModel(
             _getCountriesEvent.value = GetCountriesEvent.Loading
             when (val result = getCountriesUseCase.invoke()) {
                 is Result.Success -> {
-                    countries = result.data
+                    countries = result.data.sortedBy { it.name }
                     _getCountriesEvent.value = GetCountriesEvent.GetCountriesSuccess(countries)
                 }
                 is Result.Error -> {
@@ -80,9 +80,9 @@ class CountriesViewModel(
                         }
                     }
                 }
-                filteredCountries
+                filteredCountries.sortedBy { it.name }
             }
-            result.await().let { _getCountriesEvent.value = GetCountriesEvent.GetFilteredCountries(it) }
+            result.await().let { _getCountriesEvent.value = GetCountriesEvent.GetFilteredCountries(ArrayList(it))}
         }
     }
 

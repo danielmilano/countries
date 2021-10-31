@@ -44,7 +44,7 @@ class CountryAdapter(private val listener: OnItemClickListener) : RecyclerView.A
     }
 
     fun setData(list: List<Country>) {
-        mDiffer.submitList(ArrayList(list))
+        mDiffer.submitList(list)
     }
 
     interface OnItemClickListener {

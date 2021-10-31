@@ -18,6 +18,7 @@ import com.danielmilano.countries.databinding.FragmentCountriesBinding
 import com.danielmilano.countries.fragment.countrydetail.CountryDetailFragment.Companion.ARG_COUNTRY
 import com.danielmilano.domain.entities.Country
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.viewmodel.ext.android.sharedStateViewModel
 
 class CountriesFragment : Fragment(R.layout.fragment_countries), CountryAdapter.OnItemClickListener {
@@ -110,7 +111,6 @@ class CountriesFragment : Fragment(R.layout.fragment_countries), CountryAdapter.
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                viewModel.getFilteredCountries(query)
                 return true
             }
 
@@ -118,6 +118,7 @@ class CountriesFragment : Fragment(R.layout.fragment_countries), CountryAdapter.
                 if (!newText.isNullOrEmpty()) {
                     viewModel.setQuery(newText)
                 }
+                viewModel.getFilteredCountries(newText)
                 return true
             }
         })
